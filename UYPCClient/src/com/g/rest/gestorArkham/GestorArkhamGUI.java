@@ -1,6 +1,7 @@
 package com.g.rest.gestorArkham;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -35,10 +36,26 @@ import com.jgoodies.forms.layout.FormSpecs;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 
+
+//TODO: Hacer bucle control de actualizacion controlar por un id que se actualiza
+
+
 public class GestorArkhamGUI extends JFrame {
 
 	private JPanel contentPane;
-	private final Action action = new SwingAction();
+	
+	
+	
+	//estado puertas // true = abiertas; false = cerradas
+	public static boolean dGuardias;
+	public static boolean dCeldas;
+	public static boolean dLaboratorio;
+	public static boolean dTaller;
+	public static boolean dJardin;
+	public static boolean dEnfermeria;
+	public static boolean dPuente;
+	
+	public static int nivHack = 0;
 
 	/**
 	 * Launch the application.
@@ -120,32 +137,72 @@ public class GestorArkhamGUI extends JFrame {
 		});
 		panelButton.add(plantaP);
 		
+		////////////////////////////////////////////////////////////////////////////
+		//*****************puertas***************************************************//
+		dGuardias = true;
+		dCeldas = false;
+		dLaboratorio = false;
+		dTaller = false;
+		dJardin = false;
+		dEnfermeria = true;
+		dPuente = false;
+		
+		
 		JPanel panelDoors = new JPanel();
 		panelButton.add(panelDoors);
 		panelDoors.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		JToggleButton tglbtnGuardias = new JToggleButton("Guardias");
-		panelDoors.add(tglbtnGuardias);
+		JButton btnGuardias = new JButton("Guardias");
+		btnGuardias.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(nivHack > 0){
+					//
+				}else {
+					if(dGuardias){
+						dGuardias = false;
+					}else{
+						dGuardias = true;
+					}
+					if (dGuardias) btnGuardias.setBackground(Color.GREEN);
+					else btnGuardias.setBackground(Color.RED);
+				}
+			}
+		});
+		if (dGuardias) btnGuardias.setBackground(Color.GREEN);
+		else btnGuardias.setBackground(Color.RED);
+		panelDoors.add(btnGuardias);
 		
-		JToggleButton tglbtnCeldas = new JToggleButton("Celdas");
-		panelDoors.add(tglbtnCeldas);
+		JButton btnCeldas = new JButton("Celdas");
+		if (dCeldas) btnCeldas.setBackground(Color.GREEN);
+		else btnCeldas.setBackground(Color.RED);
+		panelDoors.add(btnCeldas);
 		
-		JToggleButton tglbtnEnfermeria = new JToggleButton("Enfermeria");
-		panelDoors.add(tglbtnEnfermeria);
+		JButton btnLaboratorio = new JButton("Laboratorio");
+		if (dLaboratorio) btnLaboratorio.setBackground(Color.GREEN);
+		else btnLaboratorio.setBackground(Color.RED);
+		panelDoors.add(btnLaboratorio);
 		
-		JToggleButton tglbtnLaboratorio = new JToggleButton("Laboratorio");
-		panelDoors.add(tglbtnLaboratorio);
+		JButton btnTaller = new JButton("Taller");
+		if (dTaller) btnTaller.setBackground(Color.GREEN);
+		else btnTaller.setBackground(Color.RED);
+		panelDoors.add(btnTaller);
 		
-		JToggleButton tglbtnPuente = new JToggleButton("Puente");
-		panelDoors.add(tglbtnPuente);
+		JButton btnJardin = new JButton("Jardin");
+		if (dJardin) btnJardin.setBackground(Color.GREEN);
+		else btnJardin.setBackground(Color.RED);
+		panelDoors.add(btnJardin);
+		
+		JButton btnEnfermera = new JButton("Enfermer\u00EDa");
+		if (dEnfermeria) btnEnfermera.setBackground(Color.GREEN);
+		else btnEnfermera.setBackground(Color.RED);
+		panelDoors.add(btnEnfermera);
+		
+		JButton btnPuente = new JButton("Puente");
+		if (dPuente) btnPuente.setBackground(Color.GREEN);
+		else btnPuente.setBackground(Color.RED);
+		panelDoors.add(btnPuente);
 	}
 
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "SwingAction");
-			putValue(SHORT_DESCRIPTION, "Some short description");
-		}
-		public void actionPerformed(ActionEvent e) {
-		}
-	}
+
 }

@@ -15,6 +15,13 @@ import javax.ws.rs.core.MediaType;
 public class Arkham {
 	
 	public int jokerState; // id; 0 = no hacked, 1 = primer hackeo, 2 = hackeo
+	public static boolean dGuardias;
+	public static boolean dCeldas;
+	public static boolean dLaboratorio;
+	public static boolean dTaller;
+	public static boolean dJardin;
+	public static boolean dEnfermeria;
+	public static boolean dPuente;
 	
 	@Path("estado")
 	@GET
