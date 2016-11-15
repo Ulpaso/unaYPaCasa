@@ -79,16 +79,18 @@ public class GestorArkhamGUI extends JFrame {
 		plantaB.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				
+				panel.removeAll();
 				try {
-					BufferedImage myPicture = ImageIO.read(new File("planta0.jpeg"));
+					BufferedImage myPicture0 = ImageIO.read(new File("planta0.jpeg"));
+					JLabel picLabel0 = new JLabel(new ImageIcon(myPicture0));
+					panel.add(picLabel0, BorderLayout.CENTER);
+					panel.repaint();
+					panel.revalidate();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				
-				picLabel.setIcon(new ImageIcon(myPicture));
-				panel.repaint();
 			}
 		});
 		panelButton.add(plantaB);
@@ -97,17 +99,18 @@ public class GestorArkhamGUI extends JFrame {
 		plantaP.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				panel.remove(picLabel);
+				panel.removeAll();
 					try {
-						BufferedImage myPicture = ImageIO.read(new File("planta1.jpeg"));
+						BufferedImage myPicture1 = ImageIO.read(new File("planta1.jpeg"));
+						JLabel picLabel1 = new JLabel(new ImageIcon(myPicture1));
+						panel.add(picLabel1, BorderLayout.CENTER);
+						panel.repaint();
+						panel.revalidate();
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 			
-				JLabel picLabel = new JLabel(new ImageIcon(myPicture));
-				panel.add(picLabel, BorderLayout.CENTER);
-				panel.repaint();
 			}
 		});
 		panelButton.add(plantaP);
