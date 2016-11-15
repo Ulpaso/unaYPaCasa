@@ -30,10 +30,15 @@ import net.miginfocom.swing.MigLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import javax.swing.JToggleButton;
+import com.jgoodies.forms.layout.FormSpecs;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 
 public class GestorArkhamGUI extends JFrame {
 
 	private JPanel contentPane;
+	private final Action action = new SwingAction();
 
 	/**
 	 * Launch the application.
@@ -114,6 +119,33 @@ public class GestorArkhamGUI extends JFrame {
 			}
 		});
 		panelButton.add(plantaP);
+		
+		JPanel panelDoors = new JPanel();
+		panelButton.add(panelDoors);
+		panelDoors.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JToggleButton tglbtnGuardias = new JToggleButton("Guardias");
+		panelDoors.add(tglbtnGuardias);
+		
+		JToggleButton tglbtnCeldas = new JToggleButton("Celdas");
+		panelDoors.add(tglbtnCeldas);
+		
+		JToggleButton tglbtnEnfermeria = new JToggleButton("Enfermeria");
+		panelDoors.add(tglbtnEnfermeria);
+		
+		JToggleButton tglbtnLaboratorio = new JToggleButton("Laboratorio");
+		panelDoors.add(tglbtnLaboratorio);
+		
+		JToggleButton tglbtnPuente = new JToggleButton("Puente");
+		panelDoors.add(tglbtnPuente);
 	}
 
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "SwingAction");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+		}
+	}
 }
