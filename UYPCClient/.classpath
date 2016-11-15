@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/jersey-client.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/jersey-common.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/jersey-container-servlet.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/jersey-container-servlet-core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/jersey-media-jaxb.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/jersey-server.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/aopalliance-repackaged-2.5.0-b05.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/hk2-api-2.5.0-b05.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/hk2-locator-2.5.0-b05.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/hk2-utils-2.5.0-b05.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/javassist-3.20.0-GA.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/javax.annotation-api-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/javax.inject-2.5.0-b05.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/javax.servlet-api-3.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/javax.ws.rs-api-2.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/jaxb-api-2.2.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/jersey-guava-2.24.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/org.osgi.core-4.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/osgi-resource-locator-1.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/persistence-api-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ulpaso/Documents/Develop/UnaYPaCasa/UYPCClient/validation-api-1.1.0.Final.jar"/>
+	<classpathentry kind="lib" path="jgoodies-forms-1.8.0.jar" sourcepath="jgoodies-forms-1.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="miglayout15-swing.jar" sourcepath="miglayout-src.zip"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
