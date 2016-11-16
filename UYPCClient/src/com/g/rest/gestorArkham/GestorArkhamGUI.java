@@ -11,6 +11,8 @@ import javax.swing.border.EmptyBorder;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JDialog;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
@@ -18,6 +20,8 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
+
 import javax.swing.SwingConstants;
 import javax.swing.BoxLayout;
 import java.awt.Component;
@@ -55,7 +59,7 @@ public class GestorArkhamGUI extends JFrame {
 	public static boolean dEnfermeria;
 	public static boolean dPuente;
 	
-	public static int nivHack = 0;
+	public static int nivHack = 1;
 
 	/**
 	 * Launch the application.
@@ -157,7 +161,19 @@ public class GestorArkhamGUI extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if(nivHack > 0){
-					//
+					Random rand = new Random();
+
+				    int randomNum = rand.nextInt((5 - 1) + 1) + 1;
+System.out.println(randomNum);
+				    for(int i=0;i<randomNum;i++){
+					try {
+						inJoker dialog = new inJoker();
+						dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+						dialog.setVisible(true);
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
+				    }
 				}else {
 					if(dGuardias){
 						dGuardias = false;
@@ -174,31 +190,183 @@ public class GestorArkhamGUI extends JFrame {
 		panelDoors.add(btnGuardias);
 		
 		JButton btnCeldas = new JButton("Celdas");
+		btnCeldas.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(nivHack > 0){
+					Random rand = new Random();
+
+					int randomNum = rand.nextInt((5 - 1) + 1) + 1;
+				    for(int i=0;i<randomNum;i++){
+					try {
+						inJoker dialog = new inJoker();
+						dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+						dialog.setVisible(true);
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
+				    }
+				}else {
+					if(dCeldas){
+						dCeldas = false;
+					}else{
+						dCeldas = true;
+					}
+					if (dCeldas) btnCeldas.setBackground(Color.GREEN);
+					else btnCeldas.setBackground(Color.RED);
+				}
+			}
+		});
 		if (dCeldas) btnCeldas.setBackground(Color.GREEN);
 		else btnCeldas.setBackground(Color.RED);
 		panelDoors.add(btnCeldas);
 		
 		JButton btnLaboratorio = new JButton("Laboratorio");
+		btnLaboratorio.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(nivHack > 0){
+					Random rand = new Random();
+
+					int randomNum = rand.nextInt((5 - 1) + 1) + 1;
+				    for(int i=0;i<randomNum;i++){
+					try {
+						inJoker dialog = new inJoker();
+						dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+						dialog.setVisible(true);
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
+				    }
+				}else {
+					if(dLaboratorio){
+						dLaboratorio = false;
+					}else{
+						dLaboratorio = true;
+					}
+					if (dLaboratorio) btnLaboratorio.setBackground(Color.GREEN);
+					else btnLaboratorio.setBackground(Color.RED);
+				}
+			}
+		});
 		if (dLaboratorio) btnLaboratorio.setBackground(Color.GREEN);
 		else btnLaboratorio.setBackground(Color.RED);
 		panelDoors.add(btnLaboratorio);
 		
 		JButton btnTaller = new JButton("Taller");
+		btnTaller.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(nivHack > 0){
+					Random rand = new Random();
+
+					int randomNum = rand.nextInt((5 - 1) + 1) + 1;
+				    for(int i=0;i<randomNum;i++){
+					try {
+						inJoker dialog = new inJoker();
+						dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+						dialog.setVisible(true);
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
+				    }
+				}else {
+					if(dTaller){
+						dTaller = false;
+					}else{
+						dTaller = true;
+					}
+					if (dTaller) btnTaller.setBackground(Color.GREEN);
+					else btnTaller.setBackground(Color.RED);
+				}
+			}
+		});
 		if (dTaller) btnTaller.setBackground(Color.GREEN);
 		else btnTaller.setBackground(Color.RED);
 		panelDoors.add(btnTaller);
 		
 		JButton btnJardin = new JButton("Jardin");
+		btnJardin.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(nivHack > 0){
+					Random rand = new Random();
+
+					int randomNum = rand.nextInt((5 - 1) + 1) + 1;
+				    for(int i=0;i<randomNum;i++){
+					try {
+						inJoker dialog = new inJoker();
+						dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+						dialog.setVisible(true);
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
+				    }
+				}else {
+					if(dJardin){
+						dJardin = false;
+					}else{
+						dJardin = true;
+					}
+					if (dJardin) btnJardin.setBackground(Color.GREEN);
+					else btnJardin.setBackground(Color.RED);
+				}
+			}
+		});
 		if (dJardin) btnJardin.setBackground(Color.GREEN);
 		else btnJardin.setBackground(Color.RED);
 		panelDoors.add(btnJardin);
 		
 		JButton btnEnfermera = new JButton("Enfermer\u00EDa");
+		btnEnfermera.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(nivHack > 0){
+					Random rand = new Random();
+
+					int randomNum = rand.nextInt((5 - 1) + 1) + 1;
+				    for(int i=0;i<randomNum;i++){
+					try {
+						inJoker dialog = new inJoker();
+						dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+						dialog.setVisible(true);
+					} catch (Exception e1) {
+						e1.printStackTrace();
+					}
+				    }
+				}else {
+					if(dEnfermeria){
+						dEnfermeria = false;
+					}else{
+						dEnfermeria = true;
+					}
+					if (dEnfermeria) btnEnfermera.setBackground(Color.GREEN);
+					else btnEnfermera.setBackground(Color.RED);
+				}
+			}
+		});
 		if (dEnfermeria) btnEnfermera.setBackground(Color.GREEN);
 		else btnEnfermera.setBackground(Color.RED);
 		panelDoors.add(btnEnfermera);
 		
 		JButton btnPuente = new JButton("Puente");
+		btnPuente.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if(nivHack > 0){
+					//TODO Parte puente
+				
+			}else {
+				if(dPuente){
+					dPuente = false;
+				}else{
+					dPuente = true;
+				}
+				if (dPuente) btnPuente.setBackground(Color.GREEN);
+				else btnPuente.setBackground(Color.RED);
+			}
+			}
+		});
 		if (dPuente) btnPuente.setBackground(Color.GREEN);
 		else btnPuente.setBackground(Color.RED);
 		panelDoors.add(btnPuente);
