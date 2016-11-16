@@ -102,6 +102,7 @@ public class GestorArkhamGUI extends JFrame {
 				}
 			}
 		});
+		
 	}
 
 	private static void updateState() {
@@ -250,6 +251,7 @@ public class GestorArkhamGUI extends JFrame {
 		btnGuardias.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				checkEstado();
 				if(nivHack > 0){
 					Random rand = new Random();
 
@@ -283,6 +285,7 @@ System.out.println(randomNum);
 		btnCeldas.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				checkEstado();
 				if(nivHack > 0){
 					Random rand = new Random();
 
@@ -315,6 +318,7 @@ System.out.println(randomNum);
 		btnLaboratorio.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				checkEstado();
 				if(nivHack > 0){
 					Random rand = new Random();
 
@@ -347,6 +351,7 @@ System.out.println(randomNum);
 		btnTaller.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				checkEstado();
 				if(nivHack > 0){
 					Random rand = new Random();
 
@@ -379,6 +384,7 @@ System.out.println(randomNum);
 		btnJardin.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				checkEstado();
 				if(nivHack > 0){
 					Random rand = new Random();
 
@@ -411,6 +417,7 @@ System.out.println(randomNum);
 		btnEnfermera.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				checkEstado();
 				if(nivHack > 0){
 					Random rand = new Random();
 
@@ -443,6 +450,7 @@ System.out.println(randomNum);
 		btnPuente.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				checkEstado();
 				if(nivHack > 0){
 					//TODO Parte puente
 					passJoker frame = new passJoker();
@@ -462,9 +470,16 @@ System.out.println(randomNum);
 		if (dPuente) btnPuente.setBackground(Color.GREEN);
 		else btnPuente.setBackground(Color.RED);
 		panelDoors.add(btnPuente);
+		
+		
 	}
 
 	private static URI getBaseURI(String ip) { // Pasar por argumento
 	    return UriBuilder.fromUri("http://"+ ip + "/UYPCServer").build();
+	}
+	public void checkEstado(){
+		String respuesta;
+		respuesta = target.path("arkham").path("estado").request().accept(MediaType.TEXT_PLAIN).get(String.class);
+		nivHack = Integer.parseInt(respuesta);
 	}
 }

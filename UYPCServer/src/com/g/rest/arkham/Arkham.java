@@ -18,6 +18,7 @@ public class Arkham {
 	
 	public int jokerState; // id; 0 = no hacked, 1 = primer hackeo, 2 = hackeo
 	public static boolean[] puertas = new boolean[7];
+	public static int actualiza = 0;// 0 = nada , 1 = puertas, 2 = mensajes
 	// id 0 --> public static boolean dGuardias;
 	// id 1 --> public static boolean dCeldas;
 	// id 2 --> public static boolean dLaboratorio;
@@ -41,6 +42,13 @@ public class Arkham {
 		if(id == -1 || id > 4) return "-1"; // Error valores fuera de rango
 		jokerState = id;
 		return ""+jokerState;
+	}
+	
+	@Path("update")
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String upEstado(){
+		return ""+actualiza;
 	}
 	
 	@Path("door")
@@ -85,6 +93,7 @@ public class Arkham {
 		for (int i = 0; i < puertas.length; i++) {
 			salida = salida+puertas[i];
 		}
+		actualiza = 1;
 		return salida;
 	}
 	
