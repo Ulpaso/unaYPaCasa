@@ -8,6 +8,15 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.UriBuilder;
+
+import org.glassfish.jersey.client.ClientConfig;
+import org.glassfish.jersey.client.ClientProperties;
+
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -20,6 +29,7 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 import java.util.Random;
 
 import javax.swing.SwingConstants;
@@ -39,6 +49,8 @@ import javax.swing.JToggleButton;
 import com.jgoodies.forms.layout.FormSpecs;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.JLayeredPane;
+import javax.swing.JTextField;
 
 
 //TODO: Hacer bucle control de actualizacion controlar por un id que se actualiza
@@ -48,7 +60,11 @@ public class GestorArkhamGUI extends JFrame {
 
 	private JPanel contentPane;
 	
-	
+	//variables conexion
+	private static ClientConfig config = new ClientConfig();
+    private static Client client;
+    private static WebTarget target;
+    
 	
 	//estado puertas // true = abiertas; false = cerradas
 	public static boolean dGuardias;
@@ -59,12 +75,23 @@ public class GestorArkhamGUI extends JFrame {
 	public static boolean dEnfermeria;
 	public static boolean dPuente;
 	
-	public static int nivHack = 1;
+	public static int nivHack = 0;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
+		config.property(ClientProperties.CONNECT_TIMEOUT, 100000);
+		config.property(ClientProperties.READ_TIMEOUT, 100000);
+		
+		client = ClientBuilder.newClient(config);
+		
+		target = client.target(getBaseURI("localhost:8080"));
+		
+		updateState();
+		
+		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -75,6 +102,69 @@ public class GestorArkhamGUI extends JFrame {
 				}
 			}
 		});
+	}
+
+	private static void updateState() {
+		// TODO Auto-generated method stub
+		/*
+		dCeldas = false;
+		dLaboratorio = false;
+		dTaller = false;
+		dJardin = false;
+		dEnfermeria = true;
+		dPuente = false;*/
+		String respuesta;
+		respuesta = target.path("arkham").path("guardias").request().accept(MediaType.TEXT_PLAIN).get(String.class);
+		if(respuesta.contentEquals("0")){
+			dGuardias = true;
+		} else{
+			dGuardias = false;
+		}
+		System.out.println(respuesta);
+		respuesta = target.path("arkham").path("celdas").request().accept(MediaType.TEXT_PLAIN).get(String.class);
+		if(respuesta.contentEquals("0")){
+			dCeldas = true;
+		} else{
+			dCeldas = false;
+		}
+		respuesta = target.path("arkham").path("laboratorio").request().accept(MediaType.TEXT_PLAIN).get(String.class);
+		if(respuesta.contentEquals("0")){
+			dLaboratorio = true;
+		} else{
+			dLaboratorio = false;
+		}
+		respuesta = target.path("arkham").path("taller").request().accept(MediaType.TEXT_PLAIN).get(String.class);
+		if(respuesta.contentEquals("0")){
+			dTaller = true;
+		} else{
+			dTaller = false;
+		}
+		respuesta = target.path("arkham").path("enfermeria").request().accept(MediaType.TEXT_PLAIN).get(String.class);
+		if(respuesta.contentEquals("0")){
+			dEnfermeria = true;
+		} else{
+			dEnfermeria = false;
+		}
+		respuesta = target.path("arkham").path("jardin").request().accept(MediaType.TEXT_PLAIN).get(String.class);
+		if(respuesta.contentEquals("0")){
+			dJardin = true;
+		} else{
+			dJardin = false;
+		}
+		respuesta = target.path("arkham").path("puente").request().accept(MediaType.TEXT_PLAIN).get(String.class);
+		if(respuesta.contentEquals("0")){
+			dPuente = true;
+		} else{
+			dPuente = false;
+		}
+		
+		respuesta = target.path("arkham").path("estado").request().accept(MediaType.TEXT_PLAIN).get(String.class);
+		
+		nivHack = Integer.parseInt(respuesta);
+		System.out.println(nivHack);
+		
+		
+		
 	}
 
 	/**
@@ -143,13 +233,13 @@ public class GestorArkhamGUI extends JFrame {
 		
 		////////////////////////////////////////////////////////////////////////////
 		//*****************puertas***************************************************//
-		dGuardias = true;
+		/*dGuardias = true;
 		dCeldas = false;
 		dLaboratorio = false;
 		dTaller = false;
 		dJardin = false;
 		dEnfermeria = true;
-		dPuente = false;
+		dPuente = false;*/
 		
 		
 		JPanel panelDoors = new JPanel();
@@ -355,6 +445,8 @@ System.out.println(randomNum);
 			public void mouseClicked(MouseEvent e) {
 				if(nivHack > 0){
 					//TODO Parte puente
+					passJoker frame = new passJoker();
+					frame.setVisible(true);
 				
 			}else {
 				if(dPuente){
@@ -372,5 +464,7 @@ System.out.println(randomNum);
 		panelDoors.add(btnPuente);
 	}
 
-
+	private static URI getBaseURI(String ip) { // Pasar por argumento
+	    return UriBuilder.fromUri("http://"+ ip + "/UYPCServer").build();
+	}
 }
