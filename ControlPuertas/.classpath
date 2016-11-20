@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/aopalliance-repackaged-2.5.0-b05.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/hk2-api-2.5.0-b05.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/hk2-locator-2.5.0-b05.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/hk2-utils-2.5.0-b05.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/javassist-3.20.0-GA.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/javax.annotation-api-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/javax.inject-2.5.0-b05.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/javax.servlet-api-3.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/javax.ws.rs-api-2.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/jaxb-api-2.2.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/jersey-client.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/jersey-common.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/jersey-container-servlet.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/jersey-container-servlet-core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/jersey-guava-2.24.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/jersey-media-jaxb.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/jersey-server.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/jgoodies-forms-1.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/jgoodies-forms-1.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/miglayout15-swing.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/org.osgi.core-4.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/osgi-resource-locator-1.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/persistence-api-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/validation-api-1.1.0.Final.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Oráculo/Documents/unaYPaCasa/ControlPuertas/miglayout-src.zip"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

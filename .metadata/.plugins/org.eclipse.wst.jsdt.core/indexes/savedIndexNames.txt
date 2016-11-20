@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+C:\Users\Oráculo\Documents\unaYPaCasa\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1973808231.index
+1029162721.index
+2927259993.index
+948695343.index
+1412016495.index
+3935553044.index

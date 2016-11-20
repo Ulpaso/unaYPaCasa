@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/ControlPuertas/src/com/g/rest/gestorArkham/GestorArkhamGUI.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.g.rest.gestorArkham.GestorArkhamGUI"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="192.168.8.109:8080"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="ControlPuertas"/>
+</launchConfiguration>
